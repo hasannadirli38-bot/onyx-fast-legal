@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>Onyx Fast</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#000;color:#F5F5F7;font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:40px 20px 80px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+.brand{font-weight:600;letter-spacing:.32em;font-size:13px;color:#F5F5F7;text-decoration:none}
+.brand span{display:inline-block;width:10px;height:10px;border:2px solid #F5A524;border-radius:50%;margin-right:10px;vertical-align:-1px;border-left-color:transparent}
+nav.lang a{color:#9B9BA5;text-decoration:none;font-size:14px;margin-left:12px;padding:4px 10px;border:1px solid #27272D;border-radius:999px}
+nav.lang a.on{color:#000;background:#F5A524;border-color:#F5A524}
+h1{font-size:28px;line-height:1.25;font-weight:600;letter-spacing:-.01em;margin:0 0 8px}
+h2{font-size:19px;font-weight:600;margin:36px 0 8px}
+p,li{color:#C9C9D1}
+strong{color:#F5F5F7}
+a{color:#F5A524}
+ul{padding-left:20px}
+li{margin:4px 0}
+hr{border:0;border-top:1px solid #27272D;margin:48px 0}
+footer{margin-top:56px;color:#5E5E69;font-size:13px}
+.cards a{display:block;padding:18px 20px;margin:12px 0;border:1px solid #27272D;border-radius:16px;color:#F5F5F7;text-decoration:none;background:#0E0E11}
+.cards a small{display:block;color:#9B9BA5;margin-top:2px}
+</style>
+</head>
+<body>
+<main>
+<header><a class="brand" href="index.html"><span></span>ONYX</a><nav class="lang"><a href="#tr" data-lang="tr">Türkçe</a><a href="#en" data-lang="en">English</a></nav></header>
+<section data-lang="tr" lang="tr"><h1>Onyx Fast</h1><p>Sade, hesapsız ve çevrimdışı çalışan aralıklı oruç zamanlayıcısı.</p>
+<div class="cards"><a href="privacy.html#tr">Gizlilik Politikası<small>Verilerin telefonunda kalır.</small></a><a href="terms.html#tr">Kullanım Koşulları<small>Premium, abonelik ve sağlık notu.</small></a></div>
+<p>İletişim: <a href="mailto:hasan.nadirli38@gmail.com">hasan.nadirli38@gmail.com</a></p></section>
+<section data-lang="en" lang="en"><h1>Onyx Fast</h1><p>A minimal, account-free, offline intermittent fasting timer.</p>
+<div class="cards"><a href="privacy.html#en">Privacy Policy<small>Your data stays on your phone.</small></a><a href="terms.html#en">Terms of Use<small>Premium, subscriptions and the health note.</small></a></div>
+<p>Contact: <a href="mailto:hasan.nadirli38@gmail.com">hasan.nadirli38@gmail.com</a></p></section>
+<footer>© 2026 Hasan Nadirli · Onyx Fast</footer>
+</main>
+<script>
+(function(){
+  var secs=document.querySelectorAll('section[data-lang]'); if(!secs.length) return;
+  function show(l){secs.forEach(function(s){s.hidden=s.dataset.lang!==l});
+    document.querySelectorAll('nav.lang a').forEach(function(a){a.classList.toggle('on',a.dataset.lang===l)});
+    document.documentElement.lang=l;
+    document.querySelectorAll('hr.split').forEach(function(h){h.hidden=true});}
+  var h=location.hash.replace('#','');
+  var l=(h==='tr'||h==='en')?h:((navigator.language||'en').toLowerCase().indexOf('tr')===0?'tr':'en');
+  show(l);
+  window.addEventListener('hashchange',function(){var x=location.hash.replace('#','');if(x==='tr'||x==='en')show(x);});
+})();
+</script>
+</body>
+</html>
